@@ -10,7 +10,7 @@ SC: O(1) -> no extra space
 using namespace std;
 
 /* Optimal approach */
-void rotate_by_one (int arr[], int n)
+void rotate_by_one_left (int arr[], int n)
 {
     int temp = arr[0];
     
@@ -27,7 +27,7 @@ int main()
     
     int n = sizeof(arr)/sizeof(arr[0]);
     
-    rotate_by_one (arr, n);
+    rotate_by_one_left (arr, n);
     
     for (int x : arr)
     {

@@ -7,6 +7,11 @@ SC: O(d) -> extra space
 Optimal:
 TC: O(n)
 SC: O(1) -> no extra space
+
+Algorithm (optimal):
+step 1: Reverse 0th index to k-1
+step 2: Reverse kth index to n-1
+step 3: Reverse 0th index to n-1
 *******************************************************************************/
 
 #include <iostream>
