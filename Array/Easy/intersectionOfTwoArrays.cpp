@@ -8,6 +8,10 @@ SC: O(n2)
 Optimal:
 TC: O(n)
 SC: O(n) -> for result
+
+Hint:
+No need to compare the element going to be pushed into the resultant
+array with last pushed element in the array.
 *******************************************************************************/
 
 #include <iostream>

@@ -10,6 +10,11 @@ SC: O(n)
 Optimal:
 TC: O(n + m)
 SC: O(n)
+
+Hint:
+Before pushing an element into resultant array compare 
+the last pushed element of resultant array with the element
+going to be pushed. If both are the same don't push it.
 *******************************************************************************/
 
 
