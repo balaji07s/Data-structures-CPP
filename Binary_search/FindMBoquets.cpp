@@ -1,3 +1,4 @@
+/*******************************************************************************            
             Find the min no.of.days to make m bouquets
 
 BF:
@@ -39,14 +40,8 @@ pair<int, int> findMinMax (vector<int> &arr)
     pair<int, int> minMax = {INT_MAX, INT_MIN};
     for (auto x : arr)
     {
-        if (x < minMax.first)
-        {
-            minMax.first = x;
-        }
-        else if (x > minMax.second)
-        {
-            minMax.second = x;
-        }
+        minMax.first = min(x, minMax.first);
+        minMax.second = max(x, minMax.second);
     }
     return minMax;
 }
