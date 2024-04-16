@@ -1,57 +1,43 @@
-/******************************************************************************
+/*
+                                            QUICK SORT
+Time complexity: O(n log n)
+Space complexity: O(n)
+*/
 
-                                QUICK SORT
-
-*******************************************************************************/
-
-#include <iostream>
-
-using namespace std;
-
-int partition (int l, int h, int arr[])
+void quickSort(int arr[], int low, int high)
 {
-    int pivot = arr[l];
-    int i = l, j = h;
-    while (i < j)
+    if (low < high)
     {
-        while ((i <= h) && (arr[i] <= pivot))
+        int pivot = partition (arr, low, high);
+        quickSort (arr, low, pivot-1);
+        quickSort (arr, pivot+1, high);
+    }
+}
+
+int partition (int arr[], int low, int high)
+{
+    int pivot = arr[high];
+    int i = low;
+    int j = low-1;
+    for (; i<=high-1; i++)
+    {
+        if (arr[i] < pivot)
         {
-            i++;
-        }
-        while ((j >= i) && (arr[j] > pivot))
-        {
-            j--;
-        }
-        if (i<j)
-        {
+            j++;
             swap(arr[i], arr[j]);
         }
     }
-    swap(arr[j], arr[l]);
-    return j;
+    
+    swap(arr[high], arr[j+1]);
+    
+    return j+1;
 }
 
-void quick_sort (int l, int h, int arr[])
+int main ()
 {
-    if (l < h)
-    {
-        int pIndex = partition(l, h, arr);
-        quick_sort(l, pIndex-1, arr);
-        quick_sort(pIndex+1, h, arr);
-    }
-}
+    int arr[] = {4, 1, 3, 9, 7};
+    int size = 5;
 
-int main()
-{
-    int arr[] = {20, 5, -1, 20, 11, 12, 15, 9, 2, -20};
-    int n = sizeof(arr)/sizeof(int);
-    
-    quick_sort (0, n-1, arr);
-    
-    for (int x : arr)
-    {
-        cout << x << " ";
-    }
-
+    quickSort(arr, 0, 4);
     return 0;
 }
